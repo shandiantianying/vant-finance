@@ -3,12 +3,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vant from 'vant';
+import VueMixin from './mixins/VueMixin';
 import 'vant/lib/index.css';
 import 'vant/lib/icon/local.less';
 import './assets/style/common.less';
 import ScrollPosition from 'vue-keep-scroll-position'
 
 Vue.use(Vant);
+Vue.use(VueMixin);
 Vue.use(ScrollPosition);
 Vue.config.productionTip = false
 

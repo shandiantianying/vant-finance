@@ -7,7 +7,7 @@ import TabDiscover from '../view/main/tabs/TabDiscover';
 import TabMine from '../view/main/tabs/TabMine';
 
 Vue.use(VueRouter)
-
+const ProductDetail = r => require.ensure([], () => r(require('../view/product/ProductDetail')), 'ProductDetail');
 const routes = [
 
   {
@@ -26,8 +26,14 @@ const routes = [
            {name: 'mine', path: 'mine', component: TabMine, meta: {keepAlive: true}},
     ]
   },
+  {name: 'ProductDetail', component: ProductDetail},
+
   
 ]
+// 懒得写path，给他们自动生成一个，和name同名
+routes.forEach(route => {
+  route.path = route.path || '/' + (route.name || '');
+});
 
 const router = new VueRouter({
   mode: 'history',

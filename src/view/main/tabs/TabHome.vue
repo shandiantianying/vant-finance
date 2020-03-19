@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
     <!--头部轮播-->
-    <van-swipe :autoplay="5000" indicator-color="red">
+    <van-swipe :autoplay="5000" indicator-color="red" style="width: 100%">
       <van-swipe-item v-for="(item, index) in swipeImages" :key="index">
         <van-image
           class="swipe-img"
